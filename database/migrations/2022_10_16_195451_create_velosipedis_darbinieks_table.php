@@ -25,10 +25,11 @@ return new class extends Migration
             $table->index('darbinieki_id', 'velosipedi_darbinieki_darbinieki_idx');
 
             $table->foreign('velosipedi_id', 'velosipedi_darbinieki_velosipedi_ft')->on('velosipedis')->references('id');
-            $table->foreign('darbinieki_id', 'velosipedi_darbinieki_darbiniedi_fx')->on('darbinieks')->references('id');
-
+            $table->foreign('darbinieki_id', 'velosipedi_darbinieki_darbinieki_fx')->on('darbinieks')->references('id');
+            
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
